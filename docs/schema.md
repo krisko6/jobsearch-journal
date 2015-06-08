@@ -1,39 +1,15 @@
 # Schema Information
 
-## blogs
+## applications
 column name | data type | details
-------------|-----------|-----------------------
+------------|-----------|------------------------------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
-title       | string    | not null
-
-## followings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
-
-## posts
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    |
-
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-label       | string    | not null, unique
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
-tag_id      | integer   | not null, foreign key (references tags)
+user_id     | integer   | not null, foreign key (references users)
+company     | string    | not null
+position    | string    | not null
+status      | string    | not null
+url         | string    | not null
+notes       | text      |
 
 ## users
 column name     | data type | details
@@ -43,3 +19,12 @@ email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
+
+## interviews
+column name | data type | details
+------------|-----------|----------------------------------------------------
+id          | integer   | not null, primary key
+application_id | integer   | not null, foreign key (references applications)
+datetime     | date     | not null
+duration    | float     | not null
+address     | string    | not null

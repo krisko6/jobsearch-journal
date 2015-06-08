@@ -1,29 +1,29 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Apps Index
 
 ## Rails
 ### Models
+* Application
+* Interview
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::ApplicationsController (create, destroy, index, show)
+Api::InterviewsController (create, destroy)
 
 ### Views
-* blogs/show.json.jbuilder
+* applications/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Application (parses nested `interviews` association)
+* Interview
 
 ### Collections
-* Blogs
-* Posts
+* Applications
+* Interviews
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+* ApplicationForm
+* ApplicationsIndex
 
 ## Gems/Libraries
+* serializeJSON

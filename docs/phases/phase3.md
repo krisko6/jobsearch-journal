@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Editing Applications
 
 ## Rails
 ### Models
@@ -13,9 +13,7 @@
 ### Collections
 
 ### Views
-* PostForm
+ApplicationForm
+
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

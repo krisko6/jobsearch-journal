@@ -3,24 +3,20 @@
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Applications
+![applications-index]
 
-## Blog Show
-![blog-show]
+## Application Show
+![application-show]
 
-## Post Show
-![post-show]
+## Interview
+![interview]
 
-## Post Form
-![post-form]
+## Application Create
+![application-create]
 
-## Search Results
-![search-results]
-
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[new-session]: ./wireframes/signin.png
+[applications-index]: ./wireframes/applications_index.png
+[application-create]: ./wireframes/application.png
+[interview]: ./wireframes/interview.png
+[application-show]: ./wireframes/job_status.png
