@@ -4,10 +4,11 @@ window.JobsearchJournal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var router = new JobsearchJournal.Routers.Router({
+      $rootEl:$("#main"),
+      apps: new JobsearchJournal.Collections.Applications()
+    });
+
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  JobsearchJournal.initialize();
-});

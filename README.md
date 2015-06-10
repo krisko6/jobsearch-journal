@@ -10,8 +10,8 @@ Jobsearch Journal is an application to allow users to keep track of the status o
 job applications and scheduled interviews during a job search. Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create user accounts
-- [ ] Create sessions (log in)
+- [X] Create user accounts
+- [X] Create sessions (log in)
 - [ ] Add new jobs they have applied for
 - [ ] Change the status of jobs they have applied for
       (applied, contacted, interviewed, offered, turned down, pending, hired)
