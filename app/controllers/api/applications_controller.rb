@@ -12,7 +12,7 @@ class Api::ApplicationsController < ApplicationController
   end
 
   def update
-    @application = Applications.find(params[:id])
+    @application = Application.find(params[:id])
     if @application.update_attributes(application_params)
       render json: @application
     else
