@@ -1,0 +1,12 @@
+here!
+<ul>
+<% interviews.each(function(interview){%>
+  <li>
+   <%=interview.get('address')%>
+   <%=interview.get('duration')%>
+   <%=interview.get('datetime')%>
+
+   <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
+  </li>
+<%});%>
+</ul>

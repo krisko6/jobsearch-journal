@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :interviews,
+    through: :applications,
+    source: :interviews,
+  )
+
   def password=(pw)
     @password = pw
     self.password_digest = BCrypt::Password.create(pw)

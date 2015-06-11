@@ -26,5 +26,5 @@ column name | data type | details
 id          | integer   | not null, primary key
 application_id | integer   | not null, foreign key (references applications)
 datetime     | date     | not null
-duration    | float     | not null
+duration    | integer     | not null
 address     | string    | not null

@@ -1,3 +1,15 @@
+<h1>Your Applications</h1>
+<ul>
 <% apps.each(function(app){%>
+  <li>
    <%= app.get('company')%>
+   <%= app.get('position')%>
+   <%= app.get('status')%>
+   <a href="/#/applications/<%=app.id%>/edit">Modify</a>
+   <a href="/#/applications/<%=app.id%>">Interviews</a>
+   <button class="del-button" data-id="<%=app.id%>">Delete!</button>
+  </li>
 <%});%>
+</ul>
+<br>
+<a href="/#/applications/new">New Application</a>

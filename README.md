@@ -12,8 +12,8 @@ job applications and scheduled interviews during a job search. Users can:
 
 - [X] Create user accounts
 - [X] Create sessions (log in)
-- [ ] Add new jobs they have applied for
-- [ ] Change the status of jobs they have applied for
+- [X] Add new jobs they have applied for
+- [X] Change the status of jobs they have applied for
       (applied, contacted, interviewed, offered, turned down, pending, hired)
 - [ ] Schedule interviews for each job.
 - [ ] See when the next interviews are scheduled.
