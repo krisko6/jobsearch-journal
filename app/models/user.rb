@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
     :applications,
     class_name: Application,
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(
@@ -43,6 +44,12 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
+
+  def pending_interviews
+       interviews = self.interviews
+       interviews.where("datetime > ?", DateTime.now)
+  end
+
 
   def self.find_by_credentials(email,password)
     user = User.find_by_email(email)

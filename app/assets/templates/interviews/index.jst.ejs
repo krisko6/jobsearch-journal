@@ -1,10 +1,14 @@
-here!
+<%if (interviews.length === 0){%>
+  You have no interviews scheduled.
+<%}%>
 <ul>
 <% interviews.each(function(interview){%>
   <li>
+   <%=interview.application().get('company')%>,
+   <%=interview.application().get('position')%>
    <%=interview.get('address')%>
-   <%=interview.get('duration')%>
-   <%=interview.get('datetime')%>
+   <%=new Date(interview.get('datetime')).toLocaleString()%>
+   <%=interview.get('duration')%> minutes
 
    <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
   </li>

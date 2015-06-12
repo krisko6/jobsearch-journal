@@ -1,6 +1,11 @@
 class Api::InterviewsController < ApplicationController
   def create
     data = interview_params
+    d = Date.parse(data[:date])
+    t = Time.parse(data[:time])
+    data[:datetime] = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+    data.delete(:date)
+    data.delete(:time)
     @interview = Interview.new(data);
 
     if @interview.save
@@ -18,11 +23,11 @@ class Api::InterviewsController < ApplicationController
 
   def index
     @interviews = current_user.interviews
-    render json: @interviews
+    render :index
   end
 
   def interview_params
-    params.require(:interview).permit(:application_id, :datetime,
+    params.require(:interview).permit(:application_id, :date, :time,
                                         :address, :duration)
   end
 end

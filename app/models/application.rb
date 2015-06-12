@@ -5,6 +5,7 @@ class Application < ActiveRecord::Base
   has_many(:interviews,
     class_name: Interview,
     foreign_key: :application_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 end

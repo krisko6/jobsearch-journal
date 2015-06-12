@@ -15,8 +15,8 @@ job applications and scheduled interviews during a job search. Users can:
 - [X] Add new jobs they have applied for
 - [X] Change the status of jobs they have applied for
       (applied, contacted, interviewed, offered, turned down, pending, hired)
-- [ ] Schedule interviews for each job.
-- [ ] See when the next interviews are scheduled.
+- [X] Schedule interviews for each job.
+- [X] See when the next interviews are scheduled.
 
 ## Design Docs
 * [View Wireframes][views]
@@ -61,7 +61,7 @@ as well as a simple motivational message.
 
 - [ ] Pagination/infinite scroll
 - [ ] Accordion view for jobs.
-- [ ] Search for jobs.
+- [X] Search for jobs.
 - [ ] User avatars (via gravatar)
 - [ ] Email notification for an interview.
 - [ ] Multiple Sessions

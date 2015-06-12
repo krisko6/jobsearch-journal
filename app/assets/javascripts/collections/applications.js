@@ -12,7 +12,12 @@ JobsearchJournal.Collections.Applications = Backbone.Collection.extend({
       return 1;
     }
   },
-  
+
+  customFilter: function(filters){
+    var results = this.where(filters);
+    this.reset(results);
+  },
+
   getOrFetch: function(id){
     var app = this.get(id);
     if(!app){

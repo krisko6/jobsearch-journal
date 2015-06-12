@@ -1,8 +1,11 @@
 <form>
   <h2>Schedule New Interview</h2>
   <input type="hidden" name="interview[application_id]" value="<%=app.id%>">
-  <label>Date/Time<br>
-    <input name="interview[datetime]" type="date"><br>
+  <label>Date<br>
+    <input name="interview[date]" type="date"><br>
+  </label>
+  <label>Time<br>
+    <input name="interview[time]" type="time"><br>
   </label>
   <label>Address<br>
     <input name="interview[address]" type="text"><br>
@@ -11,4 +14,5 @@
     <input name="interview[duration]" type="text"><br>
   </label><br>
   <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <div class="errors" style="color:red;"></div>
 </form>

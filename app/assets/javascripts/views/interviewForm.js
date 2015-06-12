@@ -27,6 +27,11 @@ JobsearchJournal.Views.InterviewForm = Backbone.View.extend({
         that.collection.add(that.model,{merge:true});
         that.model = new JobsearchJournal.Models.Interview();
         that.render();
+      },
+      error: function(xhr,response){
+        console.log(response.responseText);
+        $(".errors").html(response.responseText);
+
       }
     });
   }

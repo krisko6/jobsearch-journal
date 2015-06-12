@@ -1,14 +1,15 @@
 JobsearchJournal.Collections.Interviews = Backbone.Collection.extend({
   url: "/api/interviews",
-  
+  model: JobsearchJournal.Models.Interview,
+
   comparator: function(modelA,modelB){
-    if (modelB.get('datetime') < modelA.get('datetime')){
+    if (modelB.get('datetime') > modelA.get('datetime')){
       return -1;
     }
     if (modelB.get('datetime') === modelA.get('datetime')){
       return 0;
     }
-    if (modelB.get('datetime') > modelA.get('datetime')){
+    if (modelB.get('datetime') < modelA.get('datetime')){
       return 1;
     }
   },

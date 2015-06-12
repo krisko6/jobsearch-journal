@@ -3,10 +3,12 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$rootEl = options.$rootEl;
     this.collection = options.apps;
+    this.interviews = options.interviews;
   },
 
   routes:{
     "" : "index",
+    "interviews" : "interviewsIndex",
     "applications/new" : "newApplication",
     "applications/:id" : "showApplication",
     "applications/:id/edit" : "editApplication"
@@ -40,6 +42,14 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
     var app = this.collection.getOrFetch(id);
     var content = new JobsearchJournal.Views.AppShow({
       model: app});
+    this._swapView(content);
+  },
+
+  interviewsIndex: function(){
+    this.interviews.fetch();
+    var content = new JobsearchJournal.Views.InterviewsIndex({
+      collection: this.interviews
+    });
     this._swapView(content);
   },
 
