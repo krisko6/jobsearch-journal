@@ -2,13 +2,13 @@ JobsearchJournal.Collections.Applications = Backbone.Collection.extend({
   url: "/api/applications",
   model: JobsearchJournal.Models.Application,
   comparator: function(modelA,modelB){
-    if (modelB.get('updated_at') < modelA.get('updated_at')){
+    if (modelB.get('created_at') < modelA.get('created_at')){
       return -1;
     }
-    if (modelB.get('updated_at') === modelA.get('updated_at')){
+    if (modelB.get('created_at') === modelA.get('created_at')){
       return 0;
     }
-    if (modelB.get('updated_at') > modelA.get('updated_at')){
+    if (modelB.get('created_at') > modelA.get('created_at')){
       return 1;
     }
   },

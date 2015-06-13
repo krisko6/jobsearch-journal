@@ -7,11 +7,19 @@
   <label>Time<br>
     <input name="interview[time]" type="time"><br>
   </label>
-  <label>Address<br>
+  <label>Address/Phone/Skype<br>
     <input name="interview[address]" type="text"><br>
   </label>
+  <label>Type<br>
+    <select name="interview[style]" >
+      <option value="In-Person">In-Person</option>
+      <option value="Skype">Skype</option>
+      <option value="Phone">Phone</option>
+      <option value="Other">Other</option>
+    </select><br>
+  </label>
   <label>Duration(minutes)<br>
-    <input name="interview[duration]" type="text"><br>
+    <input name="interview[duration]" type="text" value="30"><br>
   </label><br>
   <input type="submit" value="Submit" class="btn btn-primary"><br>
   <div class="errors" style="color:red;"></div>

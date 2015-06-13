@@ -21,7 +21,7 @@ class Api::ApplicationsController < ApplicationController
     end
   end
 
-  def new
+  def new # TA: delete is not using
   end
 
   def destroy

@@ -4,11 +4,12 @@
 <ul>
 <% interviews.each(function(interview){%>
   <li>
-   <%=interview.application().get('company')%>,
-   <%=interview.application().get('position')%>
-   <%=interview.get('address')%>
-   <%=new Date(interview.get('datetime')).toLocaleString()%>
-   <%=interview.get('duration')%> minutes
+   <%=interview.application().escape('company')%>,
+   <%=interview.application().escape('position')%>
+   <%=interview.escape('address')%>
+   <%=interview.escape('style')%>
+   <%=new Date(interview.escape('datetime')).toLocaleString()%>
+   <%=interview.escape('duration')%> minutes
 
    <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
   </li>

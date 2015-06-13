@@ -1,12 +1,3 @@
-<ul>
-<% apps.each(function(app){%>
-  <li>
-   <a href="http://<%= app.get('url')%>"><%= app.get('company')%></a>
-   <%= app.get('position')%>
-   <%= app.get('status')%>
-   <a href="/#/applications/<%=app.id%>/edit">Modify</a>
-   <a href="/#/applications/<%=app.id%>">Interviews</a>
-   <button class="del-button" data-id="<%=app.id%>">Delete!</button>
-  </li>
-<%});%>
+<ul class="app-subviews">
+
 </ul>

@@ -5,6 +5,7 @@ class CreateInterviews < ActiveRecord::Migration
       t.datetime :datetime, null: false
       t.integer :duration, default: 30, null: false
       t.string :address, null: false
+      t.string :style, default: "In-Person", null: false
       t.timestamps null: false
     end
 

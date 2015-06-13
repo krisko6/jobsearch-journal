@@ -8,4 +8,10 @@ class Application < ActiveRecord::Base
     primary_key: :id,
     dependent: :destroy
   )
+  has_many(:offers,
+    class_name: Offer,
+    foreign_key: :application_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
 end

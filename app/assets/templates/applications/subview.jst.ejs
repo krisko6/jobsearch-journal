@@ -1,0 +1,15 @@
+<li>
+  <a href="http://<%= app.escape('url')%>"><%= app.escape('company')%></a>
+  <%= app.escape('position')%>
+  <select>
+    <option <%if(app.escape('status') === 'Pending'){%>selected<%}%> value="Pending">Pending</option>
+    <option <%if(app.escape('status') === 'Applied'){%>selected<%}%> value="Applied">Applied</option>
+    <option <%if(app.escape('status') === 'Contacted'){%>selected<%}%> value="Contacted">Contacted</option>
+    <option <%if(app.escape('status') === 'Interviewed'){%>selected<%}%> value="Interviewed">Interviewed</option>
+    <option <%if(app.escape('status') === 'Offered'){%>selected<%}%> value="Offered">Offered</option>
+    <option <%if(app.escape('status') === 'Declined'){%>selected<%}%> value="Declined">Declined</option>
+  </select>
+  <a href="/#/applications/<%=app.id%>/edit">Modify</a>
+  <a href="/#/applications/<%=app.id%>">Interviews</a>
+  <button class="del-button" data-id="<%=app.id%>">Delete!</button>
+</li>

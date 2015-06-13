@@ -1,0 +1,30 @@
+<form>
+  <h2>New Offer</h2>
+  <input type="hidden" name="offer[application_id]" value="1">
+  <label>Application<br>
+    <select name="offer[application_id]" >
+      <%applications.each(function(app){%>
+        <%if(app.escape('status') === 'Offered'){%>
+          <option value="<%=app.id%>"><%=app.escape('company')%>,<%=app.escape('position')%></option>
+        <%}%>
+      <%});%>
+    </select><br>
+  </label>
+  <label>Due Date<br>
+    <input name="offer[due_date]" type="date"><br>
+  </label>
+  <label>Salary($)<br>
+    <input name="offer[salary]" type="text" value="0"><br>
+  </label>
+  <label>Bonus($)<br>
+    <input name="offer[bonus]" type="text"><br>
+  </label>
+  <label>Vacation(weeks)<br>
+    <input name="offer[vacation]" type="text"><br>
+  </label><br>
+  <label>Notes<br>
+    <input name="offer[notes]" type="text"><br>
+  </label><br>
+  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <div class="errors" style="color:red;"></div>
+</form>

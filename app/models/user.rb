@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
     source: :interviews,
   )
 
+  has_many(
+    :offers,
+    through: :applications,
+    source: :offers
+  )
+
   def password=(pw)
     @password = pw
     self.password_digest = BCrypt::Password.create(pw)

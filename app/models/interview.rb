@@ -1,5 +1,5 @@
 class Interview < ActiveRecord::Base
-  validates :application_id, :datetime, :duration, :address, presence: true
+  validates :application_id, :datetime, :duration, :address, :style, presence: true
   validate :does_not_conflict_with_other_interviews
   belongs_to :application
   has_one(:user,

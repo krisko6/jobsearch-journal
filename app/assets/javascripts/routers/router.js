@@ -2,8 +2,9 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options){
     this.$rootEl = options.$rootEl;
-    this.collection = options.apps;
+    this.collection = options.apps; // TA: this.apps = ...
     this.interviews = options.interviews;
+    this.offers = options.offers;
   },
 
   routes:{
@@ -11,17 +12,20 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
     "interviews" : "interviewsIndex",
     "applications/new" : "newApplication",
     "applications/:id" : "showApplication",
-    "applications/:id/edit" : "editApplication"
+    "applications/:id/edit" : "editApplication",
+    "offers" : "offersIndex"
   },
 
   index: function(){
     this.collection.fetch();
-    var content = new JobsearchJournal.Views.AppsIndex({collection: this.collection});
+    var content = new JobsearchJournal.Views.AppsIndex({
+      collection: this.collection
+    });
     this._swapView(content);
   },
 
   newApplication: function(){
-    this.collection.fetch();
+    this.collection.fetch(); // TA: do we really need this fetch?
     var app = new JobsearchJournal.Models.Application();
     var content = new JobsearchJournal.Views.AppForm({
       collection: this.collection,
@@ -31,7 +35,7 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
 
   editApplication: function(id){
     this.collection.fetch();
-    var app = this.collection.getOrFetch(id)
+    var app = this.collection.getOrFetch(id);
     var content = new JobsearchJournal.Views.AppForm({
       collection: this.collection,
       model: app});
@@ -49,6 +53,16 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
     this.interviews.fetch();
     var content = new JobsearchJournal.Views.InterviewsIndex({
       collection: this.interviews
+    });
+    this._swapView(content);
+  },
+
+  offersIndex: function(){
+    this.offers.fetch();
+    this.collection.fetch();
+    var content = new JobsearchJournal.Views.OffersIndex({
+      collection: this.offers,
+      applications: this.collection
     });
     this._swapView(content);
   },

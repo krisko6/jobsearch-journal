@@ -3,9 +3,9 @@ JobsearchJournal.Views.AppShow = Backbone.CompositeView.extend({
   initialize: function(options){
     this.listenTo(this.model,"sync",this.render);
     var interviews = this.model.interviews().sort();
-    this.render();
+    // this.render(); // TA: I commented this out
     var interviewList = new JobsearchJournal.Views.AppInterviewList({collection: interviews});
-    this.addSubview(".interviewsList",interviewList);
+    this.addSubview(".interviewsList",interviewList); // TA: use dashes instead of camel case
     var interviewForm = new JobsearchJournal.Views.InterviewForm({
       app: this.model,
       collection: interviews,

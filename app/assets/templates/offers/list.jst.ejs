@@ -1,0 +1,16 @@
+<%if (offers.length === 0){%>
+  You have no offers.
+<%}%>
+<ul>
+<% offers.each(function(offer){%>
+  <li>
+   <%=offer.application().escape('company')%>,
+   <%=offer.application().escape('position')%>
+   <%=offer.escape('salary')%>
+   <%=offer.escape('bonus')%>
+   <%=offer.escape('notes')%>
+   <%=new Date(offer.escape('due_date')).toLocaleString()%>
+   <button class="del-button" data-id="<%=offer.id%>">Delete!</button>
+  </li>
+<%});%>
+</ul>

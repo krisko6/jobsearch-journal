@@ -66,6 +66,14 @@ as well as a simple motivational message.
 - [ ] Email notification for an interview.
 - [ ] Multiple Sessions
 
+### TA Suggestions
+
+* Filter applications (checkboxes)
+* Change application status via dropdown in applications index (make index items subviews)
+* Composite view candidate: interview index page (each interview item is a subview)
+* Rescue ArgumentError in controller to render nicer errors
+* escape html is jst templates
+
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md

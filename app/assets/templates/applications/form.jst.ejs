@@ -1,25 +1,25 @@
 <form>
-  <h1><%=app.get('company')%></h1>
+  <h1><%=app.escape('company')%></h1>
   <label>Company<br>
-    <input name="application[company]" type="text" value="<%= app.get('company')%>"><br>
+    <input name="application[company]" type="text" value="<%= app.escape('company')%>"><br>
   </label><br>
   <label>Position<br>
-    <input name="application[position]" type="text" value="<%= app.get('position')%>"><br>
+    <input name="application[position]" type="text" value="<%= app.escape('position')%>"><br>
   <label>Status<br>
     <select name="application[status]" >
-      <option <%if(app.get('status') === 'Pending'){%>selected<%}%> value="Pending">Pending</option>
-      <option <%if(app.get('status') === 'Applied'){%>selected<%}%> value="Applied">Applied</option>
-      <option <%if(app.get('status') === 'Contacted'){%>selected<%}%> value="Contacted">Contacted</option>
-      <option <%if(app.get('status') === 'Interviewed'){%>selected<%}%> value="Interviewed">Interviewed</option>
-      <option <%if(app.get('status') === 'Offered'){%>selected<%}%> value="Offered">Offered</option>
-      <option <%if(app.get('status') === 'Completed'){%>selected<%}%> value="Completed">Completed</option>
+      <option <%if(app.escape('status') === 'Pending'){%>selected<%}%> value="Pending">Pending</option>
+      <option <%if(app.escape('status') === 'Applied'){%>selected<%}%> value="Applied">Applied</option>
+      <option <%if(app.escape('status') === 'Contacted'){%>selected<%}%> value="Contacted">Contacted</option>
+      <option <%if(app.escape('status') === 'Interviewed'){%>selected<%}%> value="Interviewed">Interviewed</option>
+      <option <%if(app.escape('status') === 'Offered'){%>selected<%}%> value="Offered">Offered</option>
+      <option <%if(app.escape('status') === 'Declined'){%>selected<%}%> value="Declined">Declined</option>
     </select><br>
   </label><br>
   <label>URL<br>
-    <input name="application[url]" type="text" value="<%= app.get('url')%>"><br>
+    <input name="application[url]" type="text" value="<%= app.escape('url')%>"><br>
   </label><br>
   <label>Notes<br>
-    <textarea name="application[notes]"><%= app.get('notes')%></textarea><br>
+    <textarea name="application[notes]"><%= app.escape('notes')%></textarea><br>
   </label><br>
   <input type="submit" value="Submit" class="btn btn-primary"><br>
   <a href="/#">Back to Applications</a>
