@@ -1,8 +1,10 @@
 <form>
+
   <h2>New Offer</h2>
   <input type="hidden" name="offer[application_id]" value="1">
   <label>Application<br>
     <select name="offer[application_id]" >
+      <option value="-1"></option>
       <%applications.each(function(app){%>
         <%if(app.escape('status') === 'Offered'){%>
           <option value="<%=app.id%>"><%=app.escape('company')%>,<%=app.escape('position')%></option>
@@ -25,6 +27,9 @@
   <label>Notes<br>
     <input name="offer[notes]" type="text"><br>
   </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <button type="submit" class="btn btn-success">
+      <i class="fa fa-calendar"></i> Next
+  </button>
+
   <div class="errors" style="color:red;"></div>
 </form>

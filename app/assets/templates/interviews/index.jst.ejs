@@ -1,17 +1,3 @@
-<%if (interviews.length === 0){%>
-  You have no interviews scheduled.
-<%}%>
-<ul>
-<% interviews.each(function(interview){%>
-  <li>
-   <%=interview.application().escape('company')%>,
-   <%=interview.application().escape('position')%>
-   <%=interview.escape('address')%>
-   <%=interview.escape('style')%>
-   <%=new Date(interview.escape('datetime')).toLocaleString()%>
-   <%=interview.escape('duration')%> minutes
+<ul class="interviewList">
 
-   <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
-  </li>
-<%});%>
 </ul>

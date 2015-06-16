@@ -13,6 +13,19 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
     <% if signed_in? %>
+      <%interview = current_user.next_interview%><%if interview%>
+
+        <li>
+          <a href="/#/interviews">
+          Next Interview:
+          <%=interview.application.company%>,
+          <%=interview.application.position%>,
+          <%=interview.address%>
+          <%=interview.datetime%>
+          , Good Luck!
+        </a>
+        </li>
+        <%end%>
       <li><a href="/#/interviews">Interviews  <strong class="badge"><%=current_user.pending_interviews.count%></strong></a></li>
       <li><a href="/#/offers">Offers </a></li>
       <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>

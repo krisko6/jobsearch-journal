@@ -1,18 +1,25 @@
 class Api::InterviewsController < ApplicationController
   def create
     data = interview_params
-    d = Date.parse(data[:date])
-    t = Time.parse(data[:time])
-    data[:datetime] = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+    begin
+      d = Date.parse(data[:date])
+      t = Time.parse(data[:time])
+      data[:datetime] = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+    rescue Exception
+      render json: "Invalid input for date/time. Try again.", status: :unprocessable_entity
+      return
+    end
     data.delete(:date)
     data.delete(:time)
     @interview = Interview.new(data);
 
     if @interview.save
+      JobMailer.interview_email(current_user,@interview).deliver;
       render json: @interview
     else
       render json: @interview.errors.full_messages, status: :unprocessable_entity
     end
+
   end
 
   def destroy

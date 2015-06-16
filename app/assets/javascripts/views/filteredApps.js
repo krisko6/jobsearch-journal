@@ -2,14 +2,15 @@ JobsearchJournal.Views.FilteredAppsIndex = Backbone.CompositeView.extend({
   template: JST['applications/filter'],
 
   initialize: function(options){
-    this.listenTo(this.collection,"add remove set",this.render);
+    this.listenTo(this.collection,"add remove reset",this.render);
     this.listenTo(this.collection,"add",this.addAppSubview);
     this.listenTo(this.collection,"remove",this.removeAppSubview);
 
     this.collection.each(function(app){
       this.addAppSubview(app);
-    });
+    }.bind(this));
   },
+
   addAppSubview: function(app){
 
     var newView = new JobsearchJournal.Views.AppSubview({model: app});

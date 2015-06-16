@@ -1,5 +1,5 @@
 <form>
-  <h1><%=app.escape('company')%></h1>
+  <h1><%=app.escape('company')%>,<%=app.escape('position')%> </h1>
   <label>Company<br>
     <input name="application[company]" type="text" value="<%= app.escape('company')%>"><br>
   </label><br>
@@ -21,6 +21,8 @@
   <label>Notes<br>
     <textarea name="application[notes]"><%= app.escape('notes')%></textarea><br>
   </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <button type="submit" class="btn btn-success">
+      <i class="fa fa-calendar"></i> Next
+  </button>
   <a href="/#">Back to Applications</a>
 </form>

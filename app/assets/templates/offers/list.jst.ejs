@@ -9,7 +9,8 @@
    <%=offer.escape('salary')%>
    <%=offer.escape('bonus')%>
    <%=offer.escape('notes')%>
-   <%=new Date(offer.escape('due_date')).toLocaleString()%>
+   <% var date = new Date(offer.escape('due_date'))%>
+   <%= date.getUTCFullYear() + '-' + date.getUTCMonth()  + '-' + date.getUTCDate() %>
    <button class="del-button" data-id="<%=offer.id%>">Delete!</button>
   </li>
 <%});%>

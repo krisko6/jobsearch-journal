@@ -51,7 +51,7 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
 
   interviewsIndex: function(){
     this.interviews.fetch();
-    var content = new JobsearchJournal.Views.InterviewsIndex({
+    var content = new JobsearchJournal.Views.InterviewIndex({
       collection: this.interviews
     });
     this._swapView(content);
@@ -68,9 +68,13 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
   },
 
   _swapView: function(view){
-    this.currentView && this.currentView.remove()
-    this.currentView = view;
-    this.$rootEl.html(this.currentView.render().$el);
+    this.$rootEl.fadeOut({complete: function(){
+      this.currentView && this.currentView.remove()
+      this.currentView = view;
+      this.$rootEl.html(this.currentView.render().$el);
+    }.bind(this)});
+
+    this.$rootEl.fadeIn();
   }
 
 });

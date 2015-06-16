@@ -59,20 +59,20 @@ as well as a simple motivational message.
 
 ### Bonus Features (TBD)
 
-- [ ] Pagination/infinite scroll
+- [X] Pagination/infinite scroll
 - [ ] Accordion view for jobs.
 - [X] Search for jobs.
 - [ ] User avatars (via gravatar)
-- [ ] Email notification for an interview.
-- [ ] Multiple Sessions
+- [X] Email notification for an interview.
+- [X] Multiple Sessions
 
 ### TA Suggestions
 
-* Filter applications (checkboxes)
-* Change application status via dropdown in applications index (make index items subviews)
-* Composite view candidate: interview index page (each interview item is a subview)
-* Rescue ArgumentError in controller to render nicer errors
-* escape html is jst templates
+* Filter applications (checkboxes) X
+* Change application status via dropdown in applications index (make index items subviews) X
+* Composite view candidate: interview index page (each interview item is a subview) X
+* Rescue ArgumentError in controller to render nicer errors X
+* escape html is jst templates X
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

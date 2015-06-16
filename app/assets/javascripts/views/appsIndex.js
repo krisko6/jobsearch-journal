@@ -50,9 +50,13 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
         return this.regexp.test(application.get('company'));
       }
     }.bind(this));
-
-    this.filteredCollection.set(results);
-    
+    this.filteredCollection = new JobsearchJournal.Collections.Applications();
+    this.filteredCollection.set(results).sort();
+    this.removeSubview(".filteredIndex",this.filteredView);
+    this.filteredView =  this.filteredView = new JobsearchJournal.Views.FilteredAppsIndex({
+          collection: this.filteredCollection
+        });
+    this.addSubview(".filteredIndex",this.filteredView);
   },
 
   checkBox: function(event){

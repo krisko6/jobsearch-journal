@@ -1,6 +1,11 @@
-<li>
+<div class="row">
+  <div class="col-xs-2">
   <a href="http://<%= app.escape('url')%>"><%= app.escape('company')%></a>
+  </div>
+  <div class="col-xs-2">
   <%= app.escape('position')%>
+  </div>
+  <div class="col-xs-2">
   <select>
     <option <%if(app.escape('status') === 'Pending'){%>selected<%}%> value="Pending">Pending</option>
     <option <%if(app.escape('status') === 'Applied'){%>selected<%}%> value="Applied">Applied</option>
@@ -9,7 +14,14 @@
     <option <%if(app.escape('status') === 'Offered'){%>selected<%}%> value="Offered">Offered</option>
     <option <%if(app.escape('status') === 'Declined'){%>selected<%}%> value="Declined">Declined</option>
   </select>
-  <a href="/#/applications/<%=app.id%>/edit">Modify</a>
-  <a href="/#/applications/<%=app.id%>">Interviews</a>
-  <button class="del-button" data-id="<%=app.id%>">Delete!</button>
-</li>
+  </div>
+  <div class="col-xs-2">
+    <a href="/#/applications/<%=app.id%>/edit"><i class="fa fa-pencil"></i> Modify</a>
+  </div>
+  <div class="col-xs-2">
+    <a href="/#/applications/<%=app.id%>"><i class="fa fa-calendar"></i> Interviews</a>
+  </div>
+  <div class="col-xs-2">
+    <button class="btn btn-danger del-button" data-id="<%=app.id%>"><i class="fa fa-trash"></i></button>
+  </div>
+</div>
