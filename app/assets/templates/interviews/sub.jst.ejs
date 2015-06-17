@@ -21,7 +21,9 @@
    <%=interview.escape('style')%>
  </div>
  <div class="col-xs-2">
-   <%=new Date(interview.escape('datetime')).toLocaleString({timeZone: 'UTC'})%>
+   <%d = new Date(interview.escape('datetime'))%>
+   <%d.setHours(d.getHours() - 5)%>
+   <%=d.toLocaleString({timeZone: 'UTC'})%>
  </div>
  <div class="col-xs-2">
    <%=interview.escape('duration')%> minutes
@@ -50,7 +52,9 @@
    <%=interview.escape('style')%>
  </div>
  <div class="col-xs-2">
-   <%=new Date(interview.escape('datetime')).toLocaleString()%>
+   <%d = new Date(interview.escape('datetime'))%>
+   <%d.setHours(d.getHours() - 5)%>
+   <%=d.toLocaleString({timeZone: 'UTC'})%>
  </div>
  <div class="col-xs-2">
    <%=interview.escape('duration')%> minutes
