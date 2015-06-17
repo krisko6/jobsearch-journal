@@ -3,7 +3,7 @@
   <h2>New Offer</h2>
   <input type="hidden" name="offer[application_id]" value="1">
   <label>Application<br>
-    <select name="offer[application_id]" >
+    <select class="form-control" name="offer[application_id]" >
       <option value="-1"></option>
       <%applications.each(function(app){%>
         <%if(app.escape('status') === 'Offered'){%>
@@ -13,19 +13,19 @@
     </select><br>
   </label>
   <label>Due Date<br>
-    <input name="offer[due_date]" type="date"><br>
+    <input class="form-control" name="offer[due_date]" type="date"><br>
   </label>
   <label>Salary($)<br>
-    <input name="offer[salary]" type="text" value="0"><br>
+    <input class="form-control" name="offer[salary]" type="text" value="0"><br>
   </label>
   <label>Bonus($)<br>
-    <input name="offer[bonus]" type="text"><br>
+    <input class="form-control" name="offer[bonus]" type="text"><br>
   </label>
   <label>Vacation(weeks)<br>
-    <input name="offer[vacation]" type="text"><br>
+    <input class="form-control" name="offer[vacation]" type="text"><br>
   </label><br>
   <label>Notes<br>
-    <input name="offer[notes]" type="text"><br>
+    <textarea class="form-control" name="offer[notes]" ></textarea><br>
   </label><br>
   <button type="submit" class="btn btn-success">
       <i class="fa fa-calendar"></i> Next

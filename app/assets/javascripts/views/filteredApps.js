@@ -19,9 +19,7 @@ JobsearchJournal.Views.FilteredAppsIndex = Backbone.CompositeView.extend({
   removeAppSubview: function(app){
     this.removeModelSubview(".app-subviews",app);
   },
-  events: {
-    "click .del-button" : "deleteApp",
-  },
+
   render: function(){
 
     this.$el.empty();
@@ -29,14 +27,14 @@ JobsearchJournal.Views.FilteredAppsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
-  },
-  deleteApp: function(event){
-    event.preventDefault();
-    var $target = $(event.currentTarget);
-    var dataId = $target.attr("data-id");
-    var model = this.collection.get(dataId);
-    model.destroy();
-  },
+  }
+  // deleteApp: function(event){
+  //   event.preventDefault();
+  //   var $target = $(event.currentTarget);
+  //   var dataId = $target.attr("data-id");
+  //   var model = this.collection.get(dataId);
+  //   model.destroy();
+  // },
 
 
 

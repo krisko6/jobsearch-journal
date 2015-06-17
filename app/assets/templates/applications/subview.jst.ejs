@@ -6,7 +6,7 @@
   <%= app.escape('position')%>
   </div>
   <div class="col-xs-2">
-  <select>
+  <select class="form-control">
     <option <%if(app.escape('status') === 'Pending'){%>selected<%}%> value="Pending">Pending</option>
     <option <%if(app.escape('status') === 'Applied'){%>selected<%}%> value="Applied">Applied</option>
     <option <%if(app.escape('status') === 'Contacted'){%>selected<%}%> value="Contacted">Contacted</option>
@@ -25,3 +25,4 @@
     <button class="btn btn-danger del-button" data-id="<%=app.id%>"><i class="fa fa-trash"></i></button>
   </div>
 </div>
+<hr>

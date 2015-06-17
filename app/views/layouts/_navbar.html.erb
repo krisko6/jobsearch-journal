@@ -26,9 +26,9 @@
         </a>
         </li>
         <%end%>
-      <li><a href="/#/interviews">Interviews  <strong class="badge"><%=current_user.pending_interviews.count%></strong></a></li>
-      <li><a href="/#/offers">Offers </a></li>
-      <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %></li>
+      <li><a href="/#/interviews">Interviews  <strong class="badge" id="interviewBadge"><%=current_user.pending_interviews.count%></strong></a></li>
+      <li><a href="/#/offers">Offers <strong class="badge" id="offerBadge"><%=current_user.pending_offers.count%></strong></a></li>
+      <li><%= button_to "Sign out", session_url, method: :delete, class: "btn btn-info navbar-btn" %></li>
     <% else %>
       <li><%= link_to "Log in", new_session_url %></li>
       <li><%= link_to "Sign up", new_user_url %></li>

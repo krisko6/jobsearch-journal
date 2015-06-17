@@ -30,6 +30,12 @@ JobsearchJournal.Views.OfferForm = Backbone.View.extend({
           that.applications.get(that.model.get('application_id')).attributes
         );
         that.collection.add(that.model,{merge:true});
+        var $badge = $(document.getElementById('offerBadge'));
+        if(new Date(that.model.get('datetime')) > (new Date())){
+          var n = parseInt($badge.text(), 10);
+          console.log(n);
+          $badge.html(n + 1);
+        }
         that.model = new JobsearchJournal.Models.Offer();
         that.render();
       },

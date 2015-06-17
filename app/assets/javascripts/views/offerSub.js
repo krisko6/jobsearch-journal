@@ -1,16 +1,16 @@
-JobsearchJournal.Views.InterviewSub = Backbone.View.extend({
-  template: JST['interviews/sub'],
+JobsearchJournal.Views.OfferSub = Backbone.View.extend({
+  template: JST['offers/sub'],
   initialize: function(options){
     this.listenTo(this.model,"sync",this.render);
   },
 
   events: {
-    'click .del-button' : 'deleteInterview'
+    'click .del-button' : 'deleteOffer'
   },
 
   render: function(){
 
-    var content = this.template({interview: this.model});
+    var content = this.template({offer: this.model});
     this.$el.fadeIn('slow', function() {
       console.log("hoy!")
     }.bind(this));
@@ -20,10 +20,10 @@ JobsearchJournal.Views.InterviewSub = Backbone.View.extend({
     return this;
   },
 
-  deleteInterview: function(event){
+  deleteOffer: function(event){
      event.preventDefault();
-     var $badge = $(document.getElementById('interviewBadge'));
-     if(new Date(this.model.get('datetime')) > (new Date())){
+     var $badge = $(document.getElementById('offerBadge'));
+     if(new Date(this.model.get('due_date')) > (new Date())){
        var n = parseInt($badge.text(), 10);
        console.log(n);
        $badge.html(n - 1);

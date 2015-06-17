@@ -52,14 +52,18 @@ class User < ActiveRecord::Base
   end
 
   def pending_interviews
-       interviews = self.interviews
-       interviews.where("datetime > ?", DateTime.now)
+    interviews = self.interviews
+    interviews.where("datetime > ?", DateTime.now)
   end
 
   def next_interview
-    pending_interviews.order('datetime DESC').first
+    pending_interviews.order('datetime').first
   end
 
+  def pending_offers
+    offers = self.offers
+    offers.where("due_date > ?", DateTime.now)
+  end
 
   def self.find_by_credentials(email,password)
     user = User.find_by_email(email)

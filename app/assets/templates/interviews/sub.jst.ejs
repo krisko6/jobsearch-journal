@@ -1,28 +1,65 @@
+
 <%if(new Date(this.model.get('datetime')) > (new Date())){%>
 
-<li class="bold interviewSub">
+<div class="row bold interviewSub">
  <%if (interview.application().escape('company')){%>
-   <%=interview.application().escape('company')%>,
-   <%=interview.application().escape('position')%>
- <%}%>
- <%=interview.escape('address')%>
- <%=interview.escape('style')%>
- <%=new Date(interview.escape('datetime')).toLocaleString()%>
- <%=interview.escape('duration')%> minutes
+   <div class="col-xs-2">
 
- <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
-</li>
+      <%=interview.application().escape('company')%>,
+      <%=interview.application().escape('position')%>
+   </div>
+   <div class="col-xs-2">
+     <%=interview.escape('address')%>
+   </div>
+ <%} else {%>
+   <div class="col-xs-4">
+     <%=interview.escape('address')%>
+   </div>
+ <%}%>
+
+ <div class="col-xs-2">
+   <%=interview.escape('style')%>
+ </div>
+ <div class="col-xs-2">
+   <%=new Date(interview.escape('datetime')).toLocaleString()%>
+ </div>
+ <div class="col-xs-2">
+   <%=interview.escape('duration')%> minutes
+ </div>
+ <div class="col-xs-2">
+   <button class="btn btn-danger del-button" ><i class="fa fa-trash"></i></button>
+ </div>
+</div>
 <%} else {%>
-<li class="interviewSub">
+<div class="row interviewSub">
  <%if (interview.application().escape('company')){%>
-   <%=interview.application().escape('company')%>,
-   <%=interview.application().escape('position')%>
- <%}%>
- <%=interview.escape('address')%>
- <%=interview.escape('style')%>
- <%=new Date(interview.escape('datetime')).toLocaleString()%>
- <%=interview.escape('duration')%> minutes
+   <div class="col-xs-2">
 
- <button class="del-button" data-id="<%=interview.id%>">Delete!</button>
-</li>
+      <%=interview.application().escape('company')%>,
+      <%=interview.application().escape('position')%>
+   </div>
+   <div class="col-xs-2">
+     <%=interview.escape('address')%>
+   </div>
+ <%} else {%>
+   <div class="col-xs-4">
+     <%=interview.escape('address')%>
+   </div>
+ <%}%>
+ <div class="col-xs-2">
+   <%=interview.escape('address')%>
+ </div>
+ <div class="col-xs-2">
+   <%=interview.escape('style')%>
+ </div>
+ <div class="col-xs-2">
+   <%=new Date(interview.escape('datetime')).toLocaleString()%>
+ </div>
+ <div class="col-xs-2">
+   <%=interview.escape('duration')%> minutes
+ </div>
+ <div class="col-xs-2">
+   <button class="btn btn-danger del-button"><i class="fa fa-trash"></i></button>
+ </div>
+</div>
 <%}%>

@@ -1,5 +1,10 @@
 <form>
-  <h1><%=app.escape('company')%>,<%=app.escape('position')%> </h1>
+
+  <%if (app.escape('company')){%>
+    <h1><%=app.escape('company')%>,<%=app.escape('position')%> </h1>
+  <%} else {%>
+    <h1>Create New Application </h1>
+  <%}%>
   <label>Company<br>
     <input name="application[company]" type="text" value="<%= app.escape('company')%>"><br>
   </label><br>

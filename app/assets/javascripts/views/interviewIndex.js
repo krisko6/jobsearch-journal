@@ -22,20 +22,12 @@ JobsearchJournal.Views.InterviewIndex = Backbone.CompositeView.extend({
 
   render: function(){
     console.log(this.collection.length);
-    //this.$el.empty();
     var content = this.template({interviews: this.collection});
+
     this.$el.html(content);
     this.attachSubviews();
     return this;
-  },
-
-  // deleteInterview: function(event){
-  //   event.preventDefault();
-  //   var $target = $(event.currentTarget);
-  //   var dataId = $target.attr("data-id");
-  //   var model = this.collection.get(dataId);
-  //   model.destroy();
-  // }
+  }
 
 
 });

@@ -1,0 +1,23 @@
+<div class="row">
+<div class="col-xs-2">
+  <%=offer.application().escape('company')%>,
+  <%=offer.application().escape('position')%>
+</div>
+<div class="col-xs-2">
+  <%=offer.escape('salary')%>
+</div>
+<div class="col-xs-2">
+  <%=offer.escape('bonus')%>
+</div>
+<div class="col-xs-2">
+  <%=offer.escape('vacation')%> weeks
+  <%=offer.escape('notes')%>
+</div>
+<div class="col-xs-2">
+  <% var date = new Date(offer.escape('due_date'))%>
+  <%= date.getUTCFullYear() + '-' + date.getUTCMonth()  + '-' + date.getUTCDate() %>
+</div>
+<div class="col-xs-2">
+  <button class="btn btn-danger del-button"><i class="fa fa-trash"></i></button>
+</div>
+</div>

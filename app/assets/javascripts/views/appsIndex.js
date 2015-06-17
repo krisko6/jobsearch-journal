@@ -29,8 +29,10 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
     //this.$el.empty();
     var content = this.template({});
     this.$el.html(content);
+    this.trigger('renderEvent');
     this.attachSubviews();
     this.$('.search').trigger("input");
+
     return this;
   },
 
