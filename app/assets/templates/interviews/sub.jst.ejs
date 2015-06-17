@@ -21,7 +21,7 @@
    <%=interview.escape('style')%>
  </div>
  <div class="col-xs-2">
-   <%=new Date(interview.escape('datetime')).toLocaleString()%>
+   <%=new Date(interview.escape('datetime')).toLocaleString({timeZone: 'UTC'})%>
  </div>
  <div class="col-xs-2">
    <%=interview.escape('duration')%> minutes
