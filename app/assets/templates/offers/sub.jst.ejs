@@ -15,7 +15,7 @@
 </div>
 <div class="col-xs-2">
   <% var date = new Date(offer.escape('due_date'))%>
-  <%= date.getUTCFullYear() + '-' + date.getUTCMonth()  + '-' + date.getUTCDate() %>
+  <%= date.getUTCFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getUTCDate() %>
 </div>
 <div class="col-xs-2">
   <button class="btn btn-danger del-button"><i class="fa fa-trash"></i></button>

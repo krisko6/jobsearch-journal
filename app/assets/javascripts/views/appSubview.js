@@ -13,7 +13,7 @@ JobsearchJournal.Views.AppSubview = Backbone.View.extend({
   render: function(){
     var content = this.template({app: this.model});
     this.$el.fadeIn('slow', function() {
-      console.log("hoy!")
+      console.log("hoy!");
     }.bind(this));
     this.$el.html(content);
     return this;
@@ -21,19 +21,16 @@ JobsearchJournal.Views.AppSubview = Backbone.View.extend({
 
   select: function(event){
     event.preventDefault();
-    // event.stopPropagation();
+  
     var val = $(event.currentTarget).val();
     this.model.set({status: val});
     this.model.save({},{});
   },
 
   destroy: function(){
-
     this.$el.hide('slide', {direction: 'right'}, 1000, function() {
-      console.log("hoy!")
       this.model.destroy();
       this.remove();
     }.bind(this));
-
   }
 });

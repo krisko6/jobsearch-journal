@@ -22,14 +22,7 @@ JobsearchJournal.Views.InterviewSub = Backbone.View.extend({
 
   deleteInterview: function(event){
      event.preventDefault();
-     var $badge = $(document.getElementById('interviewBadge'));
-     if(new Date(this.model.get('datetime')) > (new Date())){
-       var n = parseInt($badge.text(), 10);
-       console.log(n);
-       $badge.html(n - 1);
-     }
      this.$el.hide('slide', {direction: 'right'}, 1000, function() {
-       console.log("hoy!")
        this.model.destroy();
        this.remove();
      }.bind(this));

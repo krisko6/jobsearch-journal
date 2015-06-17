@@ -2,6 +2,9 @@ JobsearchJournal.Views.OffersList = Backbone.CompositeView.extend({
   template: JST['offers/list'],
   initialize: function(options){
     this.listenTo(this.collection,"add",this.addOfferSubview);
+    this.collection.each(function(offer){
+      this.addOfferSubview(offer);
+    }.bind(this));
   },
 
   addOfferSubview: function(offer){
