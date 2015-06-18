@@ -10,8 +10,7 @@ JobsearchJournal.Models.Interview = Backbone.Model.extend({
   },
 
   parse: function (response) {
-    //console.log(response);
-    //console.log(response);
+
     if (response.application) {
       this.application().set(response.application, { parse: true });
       delete response.application;

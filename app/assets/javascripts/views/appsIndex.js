@@ -37,7 +37,6 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
   },
 
   search: function(event){
-    console.log($(event.currentTarget).val());
 
     var str = $(event.currentTarget).val();
     this.regexp = new RegExp(str);
@@ -68,7 +67,6 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
     $(".filter-check:checked").each(function(idx, filter){
       this.checkedStatuses.push($(filter).val());
     }.bind(this));
-    console.log(this.checkedStatuses);
     this.checkFilter();
   }
 

@@ -28,7 +28,6 @@ JobsearchJournal.Views.InterviewForm = Backbone.View.extend({
         var $badge = $(document.getElementById('interviewBadge'));
         if(new Date(that.model.get('datetime')) > (new Date())){
           var n = parseInt($badge.text(), 10);
-          console.log(n);
           $badge.html(n + 1);
         }
         that.model = new JobsearchJournal.Models.Interview();
@@ -36,7 +35,6 @@ JobsearchJournal.Views.InterviewForm = Backbone.View.extend({
         that.render();
       },
       error: function(xhr,response){
-        console.log(response.responseText);
         $(".errors").html(response.responseText);
 
       }

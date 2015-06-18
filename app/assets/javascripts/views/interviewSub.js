@@ -12,7 +12,6 @@ JobsearchJournal.Views.InterviewSub = Backbone.View.extend({
 
     var content = this.template({interview: this.model});
     this.$el.fadeIn('slow', function() {
-      console.log("hoy!")
     }.bind(this));
     this.$el.html(content);
 

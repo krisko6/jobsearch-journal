@@ -8,9 +8,7 @@ JobsearchJournal.Views.AppInterviewList = Backbone.View.extend({
     "click .del-button" : "deleteInterview"
   },
   render: function(){
-    //console.log(this.collection);
-    //this.$el.empty();
-    //console.log("hey!");
+
     var content = this.template({interviews: this.collection});
     this.$el.html(content);
     return this;

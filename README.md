@@ -2,13 +2,12 @@
 
 [Heroku link][heroku]
 
-[heroku]:
+[heroku]: https://enigmatic-escarpment-1495.herokuapp.com
 
 ## Minimum Viable Product
 
 Jobsearch Journal is an application to allow users to keep track of the status of
 job applications and scheduled interviews during a job search. Users can:
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [X] Create user accounts
 - [X] Create sessions (log in)
@@ -17,6 +16,7 @@ job applications and scheduled interviews during a job search. Users can:
       (applied, contacted, interviewed, offered, turned down, pending, hired)
 - [X] Schedule interviews for each job.
 - [X] See when the next interviews are scheduled.
+- [X] Keep track of offers
 
 ## Design Docs
 * [View Wireframes][views]
@@ -47,7 +47,10 @@ add notes and change the status of each application.
 [Details][phase-three]
 
 ### Phase 4: Scheduling Interviews (~1 day)
-Users should be able to schedule and unschedule interviews for each job application.
+Users should be able to schedule and unschedule interviews for each job
+application. They will set the time, duration, interview type, and address,
+skype name,or phone number. A new interview cannot conflict with any previously
+scheduled interviews.
 
 [Details][phase-four]
 
@@ -57,14 +60,22 @@ as well as a simple motivational message.
 
 [Details][phase-five]
 
+## Phase 6: Offers (~1 day)
+User should be able to add and keep track of offers, for any applications with
+"offered" as their status. A new model for offers will be added, with similar
+functionailty and structure to interviews.
+
+[Details][phase-six]
+
 ### Bonus Features (TBD)
 
 - [X] Pagination/infinite scroll
 - [ ] Accordion view for jobs.
-- [X] Search for jobs.
+- [X] Search/Filter for jobs.
 - [ ] User avatars (via gravatar)
 - [X] Email notification for an interview.
 - [X] Multiple Sessions
+- [X] JQuery UI transitions
 
 ### TA Suggestions
 
