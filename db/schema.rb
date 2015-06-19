@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150612164731) do
   end
 
   add_index "interviews", ["application_id"], name: "index_interviews_on_application_id", using: :btree
+  add_index "interviews", ["datetime"], name: "index_interviews_on_datetime", using: :btree
 
   create_table "offers", force: :cascade do |t|
     t.text     "notes"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150612164731) do
   end
 
   add_index "offers", ["application_id"], name: "index_offers_on_application_id", using: :btree
+  add_index "offers", ["due_date"], name: "index_offers_on_due_date", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false

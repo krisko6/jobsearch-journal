@@ -52,7 +52,7 @@ JobsearchJournal.Routers.Router = Backbone.Router.extend({
   interviewsIndex: function(){
     this.interviews.fetch();
     var content = new JobsearchJournal.Views.InterviewIndex({
-      collection: this.interviews.sort()
+      collection: this.interviews
     });
     this._swapView(content);
   },

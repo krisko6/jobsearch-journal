@@ -5,7 +5,7 @@ JobsearchJournal.Views.InterviewIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection,"remove",this.removeModelSubview);
     this.listenTo(this.collection,"add",this.addInterviewSubview);
 
-    this.collection.each(function(interview){
+    this.collection.sort().each(function(interview){
       this.addInterviewSubview(interview);
     }.bind(this));
   },
@@ -21,7 +21,6 @@ JobsearchJournal.Views.InterviewIndex = Backbone.CompositeView.extend({
   },
 
   render: function(){
-    console.log(this.collection.length);
     var content = this.template({interviews: this.collection});
 
     this.$el.html(content);

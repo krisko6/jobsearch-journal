@@ -1,5 +1,6 @@
 <h1>Log In</h1>
-
+<div class="container">
+<div class="formDiv" style="float:left;">
 <form action="/session" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>Email<br>
@@ -8,5 +9,15 @@
   <label>Password<br>
     <input name="user[password]" type="password"><br>
   </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <input type="submit" value="Submit" class="btn btn-primary">
+
 </form>
+</div>
+  <div class="infoDiv" style="float:right;">
+    <h2>Jobsearch Journal</h2>
+    <p>
+      A tool for jobseekers.<br>
+      Track your applications, interviews, and job offers.
+    </p>
+  </div>
+</div>

@@ -1,30 +1,64 @@
-<h1>Your Applications</h1>
+<div class="container"><h1 style="float:left;">Your Applications</h1>
+<div class="instructions">
+  <p>
+    1. When you submit a new application, log it using "New Application"<br>
+    2. Search bar and checkboxes are for filtering previous jobs.<br>
+    3. Good Luck in your Job Search.
+  </p>
+</div>
+</div>
 <hr>
+<h3>Filter</h3>
 <div class="row">
-  <div class='col-xs-12'>
+  <div class='col-xs-10'>
     <input class="search form-control" placeholder="Company"></input>
+
+  </div>
+  <div class='col-xs-2'>
     <a class="btn btn-warning" href="/#/applications/new">New Application</a>
   </div>
 </div>
 
+
+
 <div class="row checks">
-  <div class='col-xs-2'>
+  <div class='col-xs-10 col-offset-2'>
+  <div class='col-xs-2 btn-danger'>
 <input class="filter-check" type="checkbox" name="vehicle" value="Pending"> Pending
   </div>
-  <div class='col-xs-2'>
+  <div class='col-xs-2 btn-info'>
 <input class="filter-check " type="checkbox" name="vehicle" value="Applied"> Applied
   </div>
-  <div class='col-xs-2'>
+  <div class='col-xs-2 btn-warning'>
 <input class="filter-check " type="checkbox" name="vehicle" value="Contacted"> Contacted
   </div>
-  <div class='col-xs-2'>
+  <div class='col-xs-2 btn-success'>
 <input class="filter-check " type="checkbox" name="vehicle" value="Interviewed"> Interviewed
   </div>
-  <div class='col-xs-2'>
+  <div class='col-xs-2 btn-primary'>
 <input class="filter-check " type="checkbox" name="vehicle" value="Offered"> Offered
   </div>
-  <div class='col-xs-2'>
+  <div class='col-xs-2 btn-default'>
 <input class="filter-check " type="checkbox" name="vehicle" value="Declined"> Declined
   </div>
+  </div>
 </div>
+<div class="row tableHeader">
+  <div class='col-xs-2'>
+    Company
+  </div>
+  <div class='col-xs-2'>
+    Position
+  </div>
+  <div class='col-xs-2'>
+    Status
+  </div>
+  <div class='col-xs-2 col-xs-offset-2'>
+    Delete
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10 col-offset-2">
 <div class="filteredIndex"></div>
+  </div>
+</div>

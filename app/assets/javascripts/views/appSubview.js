@@ -21,7 +21,6 @@ JobsearchJournal.Views.AppSubview = Backbone.View.extend({
 
   select: function(event){
     event.preventDefault();
-
     var val = $(event.currentTarget).val();
     this.model.set({status: val});
     this.model.save({},{});

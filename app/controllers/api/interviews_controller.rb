@@ -29,7 +29,7 @@ class Api::InterviewsController < ApplicationController
   end
 
   def index
-    @interviews = current_user.interviews
+    @interviews = current_user.interviews.order('datetime')
     render :index
   end
 

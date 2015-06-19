@@ -11,5 +11,7 @@ class CreateOffers < ActiveRecord::Migration
     end
 
     add_index :offers, :application_id
+    add_index :interviews, :datetime
+    add_index :offers, :due_date
   end
 end

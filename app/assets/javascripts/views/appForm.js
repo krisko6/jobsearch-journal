@@ -19,7 +19,7 @@ JobsearchJournal.Views.AppForm = Backbone.View.extend({
   submit: function(event){
     event.preventDefault();
 
-    var data = $("form").serializeJSON();
+    var data = $("form").serializeJSON().application;
     this.model.set(data);
     var that = this;
     this.model.save({},{

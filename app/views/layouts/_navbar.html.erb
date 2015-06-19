@@ -32,6 +32,7 @@
     <% else %>
       <li><%= link_to "Log in", new_session_url %></li>
       <li><%= link_to "Sign up", new_user_url %></li>
+      <li><%= button_to "Guest login", session_url, params:{'user[email]' => 'christochris@sbcglobal.net', 'user[password]' => 'password' }, method: :create, class: "btn btn-info navbar-btn" %></li>
     <% end %>
     </ul>
   </div>
