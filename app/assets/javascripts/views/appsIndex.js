@@ -37,7 +37,6 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
   },
 
   search: function(event){
-
     var str = $(event.currentTarget).val();
     this.regexp = new RegExp(str);
     this.checkFilter();
@@ -51,13 +50,8 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
         return this.regexp.test(application.get('company'));
       }
     }.bind(this));
-    this.filteredCollection = new JobsearchJournal.Collections.Applications();
-    this.filteredCollection.set(results).sort();
-    this.removeSubview(".filteredIndex",this.filteredView);
-    this.filteredView =  this.filteredView = new JobsearchJournal.Views.FilteredAppsIndex({
-          collection: this.filteredCollection
-        });
-    this.addSubview(".filteredIndex",this.filteredView);
+    // this.removeSubview(".filteredIndex",this.filteredView);
+    this.filteredView.collection.reset(results).sort();
   },
 
   checkBox: function(event){

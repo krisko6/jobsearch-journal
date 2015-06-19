@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
 gem 'font-awesome-sass'
+gem 'heroku-deflater'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

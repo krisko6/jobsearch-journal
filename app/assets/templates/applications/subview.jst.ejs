@@ -1,4 +1,4 @@
-<div class="row ">
+<div class="row appSub">
   <%if (app.escape('url') !== '' ){%>
     <div class="col-xs-2">
     <a href="http://<%= app.escape('url')%>"><%= app.escape('company')%></a>
@@ -21,10 +21,10 @@
     <option <%if(app.escape('status') === 'Declined'){%>selected<%}%> value="Declined">Declined</option>
   </select>
   </div>
-  <div class="col-xs-2 appSub">
+  <div class="col-xs-2">
     <a href="/#/applications/<%=app.id%>/edit"><i class="fa fa-pencil"></i> Modify</a>
   </div>
-  <div class="col-xs-2 appSub">
+  <div class="col-xs-2">
     <a href="/#/applications/<%=app.id%>"><i class="fa fa-calendar"></i> Interviews</a>
   </div>
   <div class="col-xs-2">
