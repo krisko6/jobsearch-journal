@@ -5,6 +5,7 @@ class Api::ApplicationsController < ApplicationController
     @application = Application.new(data);
 
     if @application.save
+  
       render json: @application
     else
       render json: @application.errors.full_messages, status: :unprocessable_entity
@@ -14,6 +15,7 @@ class Api::ApplicationsController < ApplicationController
   def update
     @application = Application.find(params[:id])
     if @application.update_attributes(application_params)
+
       render json: @application
     else
       render json: @application.errors.full_messages,

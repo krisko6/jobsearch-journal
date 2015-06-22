@@ -20,7 +20,7 @@
       <option <%if(app.escape('status') === 'Declined'){%>selected<%}%> value="Declined">Declined</option>
     </select><br>
   </label><br>
-  <label>URL<br>
+  <label>URL (optional)<br>
     <input name="application[url]" type="text" value="<%= app.escape('url')%>"><br>
   </label><br>
   <label>Notes<br>
@@ -30,4 +30,5 @@
       <i class="fa fa-calendar"></i> Submit
   </button>
   <a href="/#">Back to Applications</a>
+  <div class="errors" style="color:red;"></div>
 </form>

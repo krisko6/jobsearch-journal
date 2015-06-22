@@ -2,10 +2,10 @@
   <h2>Schedule New Interview</h2>
   <input class="form-control" type="hidden" name="interview[application_id]" value="<%=app.id%>">
   <label>Date<br>
-    <input class="form-control" name="interview[date]" type="date"><br>
+    <input class="form-control" name="interview[date]" type="date" placeholder="dd/mm/yyyy"><br>
   </label>
   <label>Time<br>
-    <input class="form-control" name="interview[time]" type="time"><br>
+    <input class="form-control" name="interview[time]" type="time" placeholder="hh:mm AM/PM"><br>
   </label>
   <label>Type<br>
     <select class="form-control" name="interview[style]" >
@@ -26,5 +26,5 @@
   <button type="submit" class="btn btn-success">
       <i class="fa fa-calendar"></i> Submit
   </button><br>
-  <div class="errors" style="color:red;"></div>
+  <div class="errors" style="color:red;"></div>   
 </form>

@@ -24,6 +24,7 @@ JobsearchJournal.Views.InterviewForm = Backbone.View.extend({
     var that = this;
     this.model.save({},{
       success: function(){
+        $(".errors").html("Interview Saved.");
         that.collection.add(that.model,{merge:true});
         var $badge = $(document.getElementById('interviewBadge'));
         if(new Date(that.model.get('datetime')) > (new Date())){

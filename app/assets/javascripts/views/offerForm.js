@@ -26,6 +26,7 @@ JobsearchJournal.Views.OfferForm = Backbone.View.extend({
     this.model.save({},{
       success: function(){
         // debugger
+        $(".errors").html("Offer Saved.");
         that.model.application().set(
           that.applications.get(that.model.get('application_id')).attributes
         );

@@ -26,6 +26,10 @@ JobsearchJournal.Views.AppForm = Backbone.View.extend({
       success: function(){
         that.collection.add(that.model,{merge:true});
         Backbone.history.navigate("",{trigger: true});
+      },
+      error: function(xhr,response){
+        $(".errors").html(response.responseText);
+
       }
     });
   }
