@@ -28,3 +28,14 @@ application_id | integer   | not null, foreign key (references applications)
 datetime     | date     | not null
 duration    | integer     | not null
 address     | string    | not null
+
+## offers
+column name | data type | details
+------------|-----------|------------------------------------------
+id          | integer   | not null, primary key
+application_id     | integer   | not null, foreign key (references applications)
+vacation       | integer     |  
+due_date    | date    | not null
+salary      | integer    | not null
+bonus         | integer    | 
+notes       | text      |

@@ -70,23 +70,24 @@ functionailty and structure to interviews.
 ### Bonus Features (TBD)
 
 - [X] Pagination/infinite scroll
-- [ ] Accordion view for jobs.
 - [X] Search/Filter for jobs.
-- [ ] User avatars (via gravatar)
 - [X] Email notification for an interview.
 - [X] Multiple Sessions
 - [X] JQuery UI transitions
+- [X] Change application status via dropdown.
+- [X] Composite views for each list
+- [X] Render argument errors in forms.
+- [X] JQuery UI transitions
 
-### TA Suggestions
-
-* Filter applications (checkboxes) X
-* Change application status via dropdown in applications index (make index items subviews) X
-* Composite view candidate: interview index page (each interview item is a subview) X
-* Rescue ArgumentError in controller to render nicer errors X
-* escape html is jst templates X
+### Future Todos:
+User avatars (via gravatar)
+Edit for individual interviews/offers
+Modal for application Creation
+Better flash errors.
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
