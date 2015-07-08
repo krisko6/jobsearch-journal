@@ -38,7 +38,8 @@ JobsearchJournal.Views.AppsIndex = Backbone.CompositeView.extend({
 
   search: function(event){
     var str = $(event.currentTarget).val();
-    this.regexp = new RegExp(str);
+    this.regexp = new RegExp(str,'i');
+    console.log(this.regexp);
     this.checkFilter();
   },
 
